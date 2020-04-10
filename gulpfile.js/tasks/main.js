@@ -1,13 +1,23 @@
-// ==== MAIN ==== //
+//
+// GULP.MAIN
+//
 
-var gulp = require('gulp');
 
-// Default task chain: build -> (livereload or browsersync) -> watch
-gulp.task('default', ['watch']);
 
-// Build a working copy of the theme
-gulp.task('build', ['images', 'scripts', 'styles', 'plugin']);
+var gulp    = require('gulp'),
+    plugins = require('gulp-load-plugins')({ camelize: true });
 
-// Dist task chain: wipe -> build -> clean -> copy -> compress images
-// NOTE: this is a resource-intensive task!
-gulp.task('dist', ['images-optimize']);
+// Default
+gulp.task('default', function(callback) {
+    plugins.sequence(
+        // Remove all files from build folder, to start with clean slate
+        'clean:files',
+        // Copy all files from src to build and svn-repo and compile Sass
+        ['files', 'svn-files', 'sass'],
+        // Start BrowserSync
+        'browsersync',
+        // Start watching for file changes
+        ['watch:files', 'watch:svn-files', 'watch:sass'],
+        callback
+    );
+});
