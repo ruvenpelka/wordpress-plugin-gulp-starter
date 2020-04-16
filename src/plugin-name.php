@@ -18,8 +18,8 @@
  * Version: 1.0.0
  * Author: Your Name or Your Company
  * Author URI: http://example.com/
- * License: GPL-2.0+
- * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+*  License: GPLv3 or later
+ * License URI: http://www.gnu.org/licenses/gpl.html
  * Text Domain: plugin-name
  * Domain Path: /languages
  */
