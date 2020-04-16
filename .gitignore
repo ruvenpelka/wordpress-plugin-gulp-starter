@@ -14,6 +14,7 @@ Thumbs.db
 .DS_Store
 
 ## WordPress
+wordpress
 wp
 wp-config.php
 wp-content/uploads/
@@ -31,8 +32,10 @@ sitemap.xml.gz
 
 ## Development
 .sass-cache
+svn-repo
 bower_components
 node_modules
 vendor
 build
 dist
+gulpenv.js
